@@ -2,6 +2,7 @@
 import React from "react";
 import "./TaskCount.css";
 import { taskDataLength } from "../TaskData";
+import { IMAGES } from "../../../utils/constants";
 
 
 const TaskCount = ({ openModal }) => {
@@ -12,7 +13,7 @@ const TaskCount = ({ openModal }) => {
       </div>
 
       <button onClick={openModal}>
-        <div className="bg-primary p-2 rounded-md addbtn flex">Add task</div>
+        <div className="bg-primary p-2 rounded-md addbtn flex gap-2"><img src={IMAGES.addTask} alt="" />Add task</div>
       </button>
     </div>
   );

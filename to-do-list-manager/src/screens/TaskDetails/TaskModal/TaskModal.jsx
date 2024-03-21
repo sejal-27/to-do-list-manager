@@ -42,9 +42,9 @@ const TaskModal = ({ isOpen, onClose }) => {
         <div className="modal-content flex justify-between align-middle add-task-heading">
           <div className=" font-semibold"> Add Tasks</div>
           <div>
-            <span className="close" onClick={onClose}>
+            <button className="close" onClick={onClose}>
               &times;
-            </span>
+            </button>
           </div>
         </div>
         <div className="">
