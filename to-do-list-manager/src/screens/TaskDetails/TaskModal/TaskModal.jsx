@@ -49,7 +49,7 @@ const TaskModal = ({ isOpen, onClose }) => {
         </div>
         <div className="">
           {taskInputs.map((input, index) => (
-            <div key={index} className="task-input-container w-full flex justify-between p-2 m-1">
+            <div key={index} className="task-input-container w-full flex justify-between p-2 m-1 gap-1">
               <input
                 type="text"
                 value={input}
