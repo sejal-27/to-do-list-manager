@@ -42,14 +42,14 @@ const TaskModal = ({ isOpen, onClose }) => {
         <div className="modal-content flex justify-between align-middle add-task-heading">
           <div className=" font-semibold"> Add Tasks</div>
           <div>
-            <span className="close" onClick={onClose}>
+            <button className="close" onClick={onClose}>
               &times;
-            </span>
+            </button>
           </div>
         </div>
         <div className="">
           {taskInputs.map((input, index) => (
-            <div key={index} className="task-input-container w-full flex justify-between p-2 m-1">
+            <div key={index} className="task-input-container w-full flex justify-between p-2 m-1 gap-1">
               <input
                 type="text"
                 value={input}
