@@ -1,14 +1,21 @@
-import React from "react";
+import React,{useState} from "react";
 import Header from "./reusables/Header";
-import taskData from "./screens/TaskDetails/TaskData";
+import TaskModal from "./screens/TaskDetails/TaskModal/TaskModal";
+
 import TaskCount from "./screens/TaskDetails/TaskCount/TaskCount";
 
 
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
   return (
     <div >
       <Header />
-      <TaskCount taskCount={taskData} />
+      <TaskCount openModal={openModal} />
+      <TaskModal isOpen={isModalOpen} onClose={closeModal} />
+      
     </div>
   );
 }

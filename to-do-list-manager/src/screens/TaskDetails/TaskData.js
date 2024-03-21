@@ -1,10 +1,13 @@
 let taskData = [];
+const AddTasks = (newTasks) => {
+  taskData = [...taskData, ...newTasks];
+  console.log(taskData, "84fgjhfj5");
+  return taskData;
+};
 
-export const addTasks = (newTasks) => {
-    taskData = [...taskData, ...newTasks];
+export const taskDataLength = () => {
+  
+  return taskData.length;
+};
 
-    
-  };
-  console.log("taskdata", taskData);
-
-export default taskData;
+export default AddTasks;
