@@ -26,6 +26,9 @@ const TaskDisplay = ({ updateTaskCount }) => {
     console.log("Task deleted:", updatedTaskData);
     setTasks(updatedTaskData);
     updateTaskCount(taskDataLength());
+    const updatedCompletedTasks = new Set(completedTasks);
+    updatedCompletedTasks.delete(index);
+    setCompletedTasks(updatedCompletedTasks);
   };
 
   const handleEditTask = (index, updatedTask) => {

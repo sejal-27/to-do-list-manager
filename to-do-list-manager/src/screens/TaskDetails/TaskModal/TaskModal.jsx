@@ -58,7 +58,7 @@ const TaskModal = ({ isOpen, onClose }) => {
                 type="text"
                 value={input}
                 onChange={(e) => handleInputChange(index, e.target.value)}
-                placeholder={`Task ${index + 1}`}
+                placeholder={`Enter your task here`}
                 className="w-full p-1 border rounded-sm"
               />
 
