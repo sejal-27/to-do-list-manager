@@ -1,5 +1,7 @@
 let taskData = [];
 export const AddTasks = (newTasks) => {
+
+  
   taskData = [...taskData, ...newTasks];
   console.log(taskData, "84fgjhfj5");
   return taskData;
