@@ -9,6 +9,10 @@ const TaskDisplay = ({ updateTaskCount }) => {
   const [editedTask, setEditedTask] = useState("");
   const [completedTasks, setCompletedTasks] = useState(new Set());
 
+  useEffect(() => {
+    setTasks(taskData);
+  }, [taskData]);
+
   const handleCheckboxChange = (index) => {
     setCompletedTasks((prevCompletedTasks) => {
       const updatedCompletedTasks = new Set(prevCompletedTasks);
@@ -20,15 +24,21 @@ const TaskDisplay = ({ updateTaskCount }) => {
       return updatedCompletedTasks;
     });
   };
-
   const handleDeleteTask = (index) => {
-    const updatedTaskData = deleteTask(index);
-    console.log("Task deleted:", updatedTaskData);
-    setTasks(updatedTaskData);
-    updateTaskCount(taskDataLength());
-    const updatedCompletedTasks = new Set(completedTasks);
-    updatedCompletedTasks.delete(index);
+    deleteTask(index);
+    const updatedCompletedTasks = new Set();
+    for (let taskIndex of completedTasks) {
+      if (taskIndex > index) {
+        updatedCompletedTasks.add(taskIndex - 1);
+      } else if (taskIndex !== index) {
+        updatedCompletedTasks.add(taskIndex);
+      }
+    }
+
     setCompletedTasks(updatedCompletedTasks);
+    setTasks([...taskData]);
+
+    updateTaskCount(taskDataLength());
   };
 
   const handleEditTask = (index, updatedTask) => {
@@ -48,10 +58,6 @@ const TaskDisplay = ({ updateTaskCount }) => {
     setEditingIndex(null);
     setEditedTask("");
   };
-
-  useEffect(() => {
-    setTasks(taskData);
-  }, [taskData]);
 
   return (
     <div className="w-full flex justify-center items-center ">
@@ -95,10 +101,22 @@ const TaskDisplay = ({ updateTaskCount }) => {
                   />
                   <span
                     className={
-                      completedTasks.has(index) ? "text-completed flex justify-between w-full " : ""
+                      completedTasks.has(index)
+                        ? "text-completed flex justify-between w-full "
+                        : ""
                     }
                   >
-                    {completedTasks.has(index) ?<> {task} <span className="completed p-1 pr-4 pl-4 rounded-2xl mr-8">COMPLETED</span> </> : task}
+                    {completedTasks.has(index) ? (
+                      <>
+                        {" "}
+                        {task}{" "}
+                        <span className="completed p-1 pr-4 pl-4 rounded-2xl mr-8">
+                          COMPLETED
+                        </span>{" "}
+                      </>
+                    ) : (
+                      task
+                    )}
                   </span>
                 </div>
                 <div className="flex gap-8">
