@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "../TaskModal/TaskModal.css";
 import AddTasks from "../TaskData";
+import { IMAGES } from "../../../utils/constants";
 
 const TaskModal = ({ isOpen, onClose }) => {
   const [taskInputs, setTaskInputs] = useState([""]);
@@ -47,36 +48,50 @@ const TaskModal = ({ isOpen, onClose }) => {
             </button>
           </div>
         </div>
-        <div className="">
+        <div className=" flex flex-col gap-3 mt-3">
           {taskInputs.map((input, index) => (
-            <div key={index} className="task-input-container w-full flex justify-between p-2 m-1 gap-1">
+            <div
+              key={index}
+              className="task-input-container w-full flex justify-between gap-3"
+            >
               <input
                 type="text"
                 value={input}
                 onChange={(e) => handleInputChange(index, e.target.value)}
                 placeholder={`Task ${index + 1}`}
-                className="w-full"
+                className="w-full p-1 border rounded-sm"
               />
 
               <button
                 onClick={() => removeTaskInput(index)}
-                className="remove-task" style={{fontSize:"2.5rem" , fontWeight:"400"}}
+                className="remove-task"
+                style={{ fontSize: "2.5rem", fontWeight: "400" }}
               >
-                -
+                <img
+                  src={IMAGES.minusTask}
+                  alt=""
+                  style={{
+                    width: "18px",
+                    height: "18px",
+                  }}
+                />
               </button>
             </div>
           ))}
-          <div className="flex justify-between items-center m-2">
-            <div >
-          <button onClick={addTaskInput} className="add-task text-primary">
-            + Add Another Task
-          </button>
-          </div>
-          <div>
-          <button onClick={handleSubmit} className="submit bg-primary p-3 rounded-md text-white">
-            Submit
-          </button>
-          </div>
+          <div className="flex justify-between items-center mt-3">
+            <div>
+              <button onClick={addTaskInput} className="add-task text-primary">
+                + Add Another Task
+              </button>
+            </div>
+            <div>
+              <button
+                onClick={handleSubmit}
+                className="submit font-normal bg-primary p-2 pr-3 pl-3 rounded-md text-white"
+              >
+                Submit
+              </button>
+            </div>
           </div>
         </div>
       </div>
