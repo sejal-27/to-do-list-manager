@@ -3,7 +3,8 @@ export const IMAGES = {
   removeTask: require("../assets/images/removeTask.png"),
   editTask: require("../assets/images/editTask.png"),
   deleteTask: require("../assets/images/deleteTask.png"),
-  minusTask: require("../assets/images/minusTask.png")
+  minusTask: require("../assets/images/minusTask.png"),
+  user: require("../assets/images/user.png")
 };
 
 export const TEXT = {};
