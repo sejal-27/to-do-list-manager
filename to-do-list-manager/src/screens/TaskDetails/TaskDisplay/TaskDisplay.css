@@ -7,16 +7,23 @@
 .cancelbtn {
     background-color: #380d50;
 }
-/* .text-completed {
-    color: rgb(1, 167, 1);
+.text-completed {
+    color: rgba(41, 41, 41, 0.473)
 }
 
-*/
+
 
 .completed {
     background-color: rgba(0, 175, 0, 0.418);
     color: rgb(0, 73, 0);
     font-size: 0.7rem;
     font-weight: 600;
+    height: 2em;
+
+}
+
+.task-content{
+ 
+    overflow-wrap: anywhere;
 
 }

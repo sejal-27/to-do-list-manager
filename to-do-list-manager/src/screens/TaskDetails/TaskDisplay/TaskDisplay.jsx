@@ -73,7 +73,7 @@ const TaskDisplay = ({ updateTaskCount }) => {
                   type="text"
                   value={editedTask}
                   onChange={(e) => setEditedTask(e.target.value)}
-                  className="w-full rounded-sm"
+                  className="w-full rounded-sm p-1"
                 />
                 {/* {console.log("editttt",editedTask)} */}
                 <div className=" flex font-thin gap-1">
@@ -102,18 +102,23 @@ const TaskDisplay = ({ updateTaskCount }) => {
                   <span
                     className={
                       completedTasks.has(index)
-                        ? "text-completed flex justify-between w-full "
-                        : ""
+                        ? "text-completed flex justify-between w-full ml-2 items-center"
+                        : "task-content"
                     }
                   >
                     {completedTasks.has(index) ? (
                       <>
+                      <div className="task-content">
                         {" "}
-                        {task}{" "}
-                        <span className="completed p-1 pr-4 pl-4 rounded-2xl mr-8">
-                          COMPLETED
-                        </span>{" "}
-                      </>
+                     
+                        {task}
+                       {" "}
+                        {" "}
+                      </div>
+                      <div className="completed p-1 pr-4 pl-4 rounded-2xl mr-8 ml-8">
+                      COMPLETED
+                    </div>
+                    </>
                     ) : (
                       task
                     )}
