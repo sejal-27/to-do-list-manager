@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles.css";
+import { IMAGES } from "../../utils/constants";
 const Header = () => {
   return (
     <div className="header flex justify-between align-middle p-4 bg-primary shadow-md sticky z-10">
@@ -10,7 +11,7 @@ const Header = () => {
         <div>
           <img
             className="h-10 w-10 flex-shrink-0 rounded-full bg-gray-300"
-            src=""
+            src={IMAGES.user}
             alt="User"
           />
         </div>
