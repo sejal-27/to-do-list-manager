@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/to-do-list-manager/static/css/main.81633d8a.css",
+    "main.js": "/to-do-list-manager/static/js/main.1d6dd189.js",
+    "static/media/user.png": "/to-do-list-manager/static/media/user.bd80a2fcbb21aa57581c.png",
+    "index.html": "/to-do-list-manager/index.html",
+    "main.81633d8a.css.map": "/to-do-list-manager/static/css/main.81633d8a.css.map",
+    "main.1d6dd189.js.map": "/to-do-list-manager/static/js/main.1d6dd189.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.81633d8a.css",
+    "static/js/main.1d6dd189.js"
+  ]
+}
